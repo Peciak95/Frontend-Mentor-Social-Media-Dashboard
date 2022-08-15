@@ -1,4 +1,5 @@
 @import '_colors';
+@import '_mixins';
 *,
 *::after,
 *::before {
@@ -12,6 +13,134 @@ html {
 }
 body {
 	font-size: 1.4rem;
-	background-color: $bright-red;
+	background-color: $very-dark-blue-background;
 	font-family: 'Inter', sans-serif;
 }
+.wrapper {
+	max-width: 1440px;
+	margin: 0 auto;
+}
+.active {
+	i {
+		left: 30px;
+	}
+}
+.nav {
+	padding: 2em;
+	background-color: $very-dark-blue-top-bg-pattern;
+	&__title {
+		color: $white-text;
+		margin-bottom: 0.3em;
+		font-size: 2.5rem;
+	}
+	&__total {
+		color: $desaturated-blue-text;
+		border-bottom: 1px solid $dark-desaturated-blue-card-bg;
+		font-size: 1.8rem;
+		padding-bottom: 2em;
+	}
+	&__toggle-container {
+		@include flexBox(flex, row, space-between, center, auto);
+		color: $desaturated-blue-text;
+		margin-top: 1.3em;
+		font-size: 2rem;
+		font-weight: bold;
+	}
+	&__toggle {
+		position: relative;
+		background: $toggle-background-dark;
+		width: 60px;
+		height: 30px;
+		border-radius: 30px;
+		transition: 0.3s;
+		cursor: pointer;
+		&--indicator {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 30px;
+			height: 30px;
+			background-color: $very-dark-blue-top-bg-pattern;
+			transform: scale(0.7);
+			border-radius: 50%;
+			transition: 0.3s;
+		}
+	}
+}
+.main {
+	position: relative;
+	&__top-bg {
+		background-color: $very-dark-blue-top-bg-pattern;
+		// background-color: red;
+		border-radius: 0 0 25px 25px;
+		height: 50px;
+	}
+	&__cards {
+		transform: translateY(-25px);
+		top: 0px;
+		@include flexBox(flex, column, space-between, center, 2em);
+	}
+	&-card {
+		width: 90%;
+		background-color: $dark-desaturated-blue-card-bg;
+		@include flexBox(flex, column, space-between, center, 1.2em);
+		padding-bottom: 1.5em;
+		border-radius: 10px;
+		// &__icon{
+		// 	color:inherit
+		// }
+		&__top-bar {
+			width: 100%;
+			height: 3px;
+			margin-bottom: 1em;
+			&--one {
+				background-color: $facebook-bar;
+			}
+			&--two {
+				background-color: $twitter-bar;
+			}
+			&--three {
+				background-image: $instagram-bar;
+			}
+			&--four {
+				background-color: $youtube-bar;
+			}
+		}
+		&__social {
+			color: $desaturated-blue-text;
+			@include flexBox(flex, row, space-between, center, 0.5em);
+		}
+		&__followers {
+			p {
+				color: $white-text;
+				text-align: center;
+				font-size: 6rem;
+				font-weight: bold;
+			}
+			h2 {
+				color: $desaturated-blue-text;
+				text-align: center;
+				text-transform: uppercase;
+				font-size: 1.4rem;
+				letter-spacing: .3em;
+				font-weight: normal;
+			}
+		}
+		&__today {
+			@include flexBox(flex, row, space-between, center, 0.5em);
+			&--one {
+				color: $white-text;
+			}
+			&--two {
+				color: $lime-green;
+			}
+			&--three {
+				color: $lime-green;
+			}
+			&--four {
+				color: $bright-red;
+			}
+		}
+	}
+}
+// @include flexBox(flex, row, center, center, auto);
