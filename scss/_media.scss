@@ -1,0 +1,47 @@
+@media (min-width: 992px) {
+	.nav {
+		flex-direction: row;
+		&__toggle-container {
+			justify-content: center;
+			width: 25%;
+			margin-top: 0;
+		}
+		&__total {
+			border-bottom: none;
+		}
+	}
+	.main {
+		&__top-bg {
+			height: 75px;
+		}
+		&-card {
+			&__followers {
+				p {
+					font-size: 3em;
+				}
+			}
+		}
+		&__cards {
+			transform: translateY(-100px);
+			flex-direction: row;
+		}
+	}
+	.overview {
+		&-cards {
+			display: grid;
+			grid-template-columns: repeat(4,1fr);
+			grid-template-rows: repeat(2,1fr);
+		}
+	}
+}
+@media (min-width: 1200px) {
+	.main {
+		&-card {
+			&__followers {
+				p {
+					font-size: 5rem;
+				}
+			}
+		}
+	}
+}
